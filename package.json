@@ -1,0 +1,30 @@
+{
+  "name": "@srinitude/forest-for-the-trees",
+  "version": "0.1.0",
+  "description": "Establish and reconcile the forest-level concept before branch-level design grilling.",
+  "license": "Apache-2.0",
+  "author": "Kiren Srinivasan <kiren@fantasymetals.com>",
+  "homepage": "https://github.com/srinitude/forest-for-the-trees#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srinitude/forest-for-the-trees.git"
+  },
+  "bugs": {
+    "url": "https://github.com/srinitude/forest-for-the-trees/issues"
+  },
+  "keywords": [
+    "agent-skill",
+    "skills.sh",
+    "conceptual-validation",
+    "product-strategy",
+    "planning",
+    "grill-with-docs"
+  ],
+  "files": [
+    "skills/",
+    "skills-lock.json",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "skills": [
+    {
+      "name": "forest-for-the-trees",
+      "version": "0.1.0",
+      "path": "skills/forest-for-the-trees",
+      "description": "Establish, validate, and reconcile the forest-level concept before branch-level design grilling.",
+      "tags": [
+        "conceptual-validation",
+        "planning",
+        "product-strategy",
+        "artifact-definition",
+        "scope-control",
+        "grill-with-docs"
+      ]
+    }
+  ]
+}

@@ -34,17 +34,24 @@ npx skills add srinitude/forest-for-the-trees --list
 ## Package Structure
 
 ```text
-.
-|-- SKILL.md
-|-- agents/
-|   `-- openai.yaml
-|-- evals/
-|   `-- evals.json
-|-- references/
-|   `-- operating-principles.md
-|-- requirements.txt
-`-- scripts/
-    `-- validate-forest-for-the-trees.py
+forest-for-the-trees/
+|-- skills/
+|   `-- forest-for-the-trees/
+|       |-- SKILL.md
+|       |-- agents/
+|       |   `-- openai.yaml
+|       |-- evals/
+|       |   `-- evals.json
+|       |-- references/
+|       |   `-- operating-principles.md
+|       |-- requirements.txt
+|       `-- scripts/
+|           `-- validate-forest-for-the-trees.py
+|-- skills-lock.json
+|-- package.json
+|-- README.md
+|-- LICENSE
+`-- NOTICE
 ```
 
 ## Validation
@@ -52,23 +59,23 @@ npx skills add srinitude/forest-for-the-trees --list
 Validate the skill package:
 
 ```bash
-skills-ref validate "$PWD"
+skills-ref validate "$PWD/skills/forest-for-the-trees"
 ```
 
 If `skills-ref` is not installed, run the official reference implementation:
 
 ```bash
 git clone --depth 1 https://github.com/agentskills/agentskills /tmp/agentskills
-uv run --project /tmp/agentskills/skills-ref skills-ref validate "$PWD"
+uv run --project /tmp/agentskills/skills-ref skills-ref validate "$PWD/skills/forest-for-the-trees"
 ```
 
 Validate the bundled script and eval corpus:
 
 ```bash
-python3 -m py_compile scripts/validate-forest-for-the-trees.py
-python3 scripts/validate-forest-for-the-trees.py --help
-python3 scripts/validate-forest-for-the-trees.py "$PWD"
-python3 -m json.tool evals/evals.json >/dev/null
+python3 -m py_compile skills/forest-for-the-trees/scripts/validate-forest-for-the-trees.py
+python3 skills/forest-for-the-trees/scripts/validate-forest-for-the-trees.py --help
+python3 skills/forest-for-the-trees/scripts/validate-forest-for-the-trees.py "$PWD/skills/forest-for-the-trees"
+python3 -m json.tool skills/forest-for-the-trees/evals/evals.json >/dev/null
 ```
 
 Validate skills CLI discovery:
