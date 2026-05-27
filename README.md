@@ -1,6 +1,6 @@
 # Forest For The Trees
 
-[![skills.sh compatible](https://img.shields.io/badge/skills.sh-compatible-111111?style=flat-square)](https://skills.sh/s/srinitude/forest-for-the-trees)
+[![skills.sh](https://skills.sh/b/srinitude/forest-for-the-trees)](https://skills.sh/s/srinitude/forest-for-the-trees)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 [![Validate](https://github.com/srinitude/forest-for-the-trees/actions/workflows/validate.yml/badge.svg)](https://github.com/srinitude/forest-for-the-trees/actions/workflows/validate.yml)
 
@@ -10,9 +10,13 @@ The skill creates a concise Forest Brief with a direct objective, actor, artifac
 
 ## Install
 
+From the [skills.sh install page](https://www.skills.sh/s/srinitude/forest-for-the-trees), use the install command shown there:
+
 ```bash
 npx skills add srinitude/forest-for-the-trees
 ```
+
+The skill also has a [skills.sh detail page](https://www.skills.sh/srinitude/forest-for-the-trees/forest-for-the-trees). The skills.sh pages are human-facing pages; the CLI source argument is the GitHub owner/repo identifier above.
 
 To preview the skills exposed by this repository:
 
