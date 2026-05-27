@@ -1,0 +1,4 @@
+interface:
+  display_name: "Forest For The Trees"
+  short_description: "Reconcile the root objective"
+  default_prompt: "Use $forest-for-the-trees to establish and reconcile a Forest Brief before handing off to grill-with-docs."

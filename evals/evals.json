@@ -1,0 +1,173 @@
+{
+  "skill": "forest-for-the-trees",
+  "trigger_evals": [
+    {
+      "id": "trigger_establish_forest",
+      "prompt": "Before we grill the feature details, help me establish the forest for the trees.",
+      "should_trigger": true,
+      "assertions": [
+        "User wants root objective clarity before branch-level grilling.",
+        "Skill should create and conceptually reconcile a Forest Brief."
+      ]
+    },
+    {
+      "id": "trigger_before_grill_with_docs",
+      "prompt": "Set the foundation for grill-with-docs so we know what we're trying to accomplish.",
+      "should_trigger": true,
+      "assertions": [
+        "User explicitly wants a foundation for grill-with-docs.",
+        "Skill should validate and reconcile the foundation before the handoff artifact."
+      ]
+    },
+    {
+      "id": "trigger_objective_first",
+      "prompt": "We need to objectively define what this product is supposed to accomplish before design review.",
+      "should_trigger": true,
+      "assertions": [
+        "User asks for objective-level framing.",
+        "Skill should establish and reconcile outcome, actor, and success evidence."
+      ]
+    },
+    {
+      "id": "trigger_scope_anchor",
+      "prompt": "Help me pin down the purpose, non-goals, and assumptions before I start interrogating the plan.",
+      "should_trigger": true,
+      "assertions": [
+        "User wants purpose, non-goals, and assumptions before deeper interrogation.",
+        "Skill should not branch into implementation decisions."
+      ]
+    },
+    {
+      "id": "trigger_conceptual_reconciliation",
+      "prompt": "Do the same kind of thorough validation as grill-with-docs, but only for the overall concept.",
+      "should_trigger": true,
+      "assertions": [
+        "User wants grill-with-docs-level rigor at the conceptual level.",
+        "Skill should challenge conceptual contradictions without exploring branches."
+      ]
+    },
+    {
+      "id": "trigger_concept_conflict",
+      "prompt": "The product is for founders, but success means investors approve it. Reconcile the forest before the branch grill.",
+      "should_trigger": true,
+      "assertions": [
+        "User presents a conceptual actor/success-evidence conflict.",
+        "Skill should ask one conceptual question with a recommended answer."
+      ]
+    },
+    {
+      "id": "trigger_plain_foundation",
+      "prompt": "Make the goal of this artifact plain enough that another agent can grill the branches later.",
+      "should_trigger": true,
+      "assertions": [
+        "User wants a plain-language foundation for later branch grilling.",
+        "Skill should produce a handoff prompt."
+      ]
+    },
+    {
+      "id": "nontrigger_recursive_grill",
+      "prompt": "Walk down every branch of this design tree and challenge each decision.",
+      "should_trigger": false,
+      "assertions": [
+        "User wants recursive design path exploration, which belongs to grill-with-docs."
+      ]
+    },
+    {
+      "id": "nontrigger_domain_docs",
+      "prompt": "Update CONTEXT.md and write any ADRs as we resolve terminology.",
+      "should_trigger": false,
+      "assertions": [
+        "User wants glossary and ADR work, which this skill explicitly does not perform."
+      ]
+    },
+    {
+      "id": "nontrigger_simple_simplify",
+      "prompt": "Simplify this paragraph without changing the meaning.",
+      "should_trigger": false,
+      "assertions": [
+        "Main task is direct text simplification, not establishing a Forest Brief."
+      ]
+    },
+    {
+      "id": "nontrigger_pr_review",
+      "prompt": "Review this PR and list bugs by severity.",
+      "should_trigger": false,
+      "assertions": [
+        "Main task is PR review, not forest-level objective framing."
+      ]
+    },
+    {
+      "id": "nontrigger_implementation_plan",
+      "prompt": "Break this spec into implementation tickets.",
+      "should_trigger": false,
+      "assertions": [
+        "Main task is planning implementation work, not objective foundation."
+      ]
+    }
+  ],
+  "functional_evals": [
+    {
+      "id": "forest_brief_only",
+      "prompt": "Use the skill on a vague idea: an app that helps founders write updates.",
+      "expected_behavior": [
+        "Creates or asks toward a reconciled Forest Brief.",
+        "Does not create a design tree or branch map.",
+        "Does not ask workflow, UI, API, or implementation branch questions."
+      ]
+    },
+    {
+      "id": "conceptual_contradiction",
+      "prompt": "Use the skill on this concept: a tool for support managers, where success is that customers stop filing tickets.",
+      "expected_behavior": [
+        "Identifies the possible actor and success-evidence mismatch.",
+        "Asks one conceptual reconciliation question with a recommended answer.",
+        "Does not propose product features or workflow changes."
+      ]
+    },
+    {
+      "id": "source_purpose_conflict",
+      "prompt": "Use the skill in a repo where the README describes an onboarding assistant but the prompt says reporting dashboard.",
+      "expected_behavior": [
+        "Checks obvious source material when available.",
+        "Surfaces the purpose conflict conceptually.",
+        "Does not resolve the conflict by choosing UI, API, architecture, or implementation details."
+      ]
+    },
+    {
+      "id": "handoff_to_grill_with_docs",
+      "prompt": "After the Forest Brief is clear, continue.",
+      "expected_behavior": [
+        "Stops after conceptual reconciliation is complete.",
+        "Provides a handoff prompt for grill-with-docs.",
+        "Explains that branch exploration belongs in grill-with-docs."
+      ]
+    },
+    {
+      "id": "local_context_limited",
+      "prompt": "Use the skill in this repo before grill-with-docs.",
+      "expected_behavior": [
+        "Inspects only enough obvious local context to complete the Forest Brief.",
+        "Does not update CONTEXT.md.",
+        "Does not create ADR files."
+      ]
+    },
+    {
+      "id": "plain_language_foundation",
+      "prompt": "I answer the objective question with jargon-heavy wording.",
+      "expected_behavior": [
+        "Restates the objective in plain language.",
+        "Preserves required technical identifiers exactly.",
+        "Does not add unsupported claims or expand into branch decisions."
+      ]
+    },
+    {
+      "id": "no_branch_despite_rigor",
+      "prompt": "Validate the concept thoroughly, then tell me the first three implementation branches.",
+      "expected_behavior": [
+        "Performs conceptual validation and reconciliation only.",
+        "Refuses to list implementation branches inside this skill.",
+        "Hands off to grill-with-docs for branch exploration."
+      ]
+    }
+  ]
+}
